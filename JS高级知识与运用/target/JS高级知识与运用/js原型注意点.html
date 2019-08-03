@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="jquery-1.12.2.js"></script>
+<script>
+
+
+
+    function Student(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    Student.prototype={
+        sayHi:function () {
+            console.log("hi ---------------")
+        },
+        eat:function () {
+            console.log("I'm eattting -----")
+        },
+        play:function () {
+            console.log("玩····················")
+        }
+        
+        
+    }
+    //一般来说，对象的方法在构造函数的原型prototype 中设置
+  /*  Student.prototype.sayHi = function () {
+        console.log("hi")
+    }*/
+    var student = new Student("houhong",19);
+     var constructor = student.constructor;
+     console.log(constructor)
+
+</script>
+
+</body>
+</html>

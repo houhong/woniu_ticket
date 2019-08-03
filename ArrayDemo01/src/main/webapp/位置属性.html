@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>位置属性的demo</title>
+    <style>
+        .father {
+            width: 100px;
+            height: 100px;
+            background-color: deeppink;
+            position: absolute;
+            border: 1px red solid;
+        }
+
+        .son1 {
+            width: 80px;
+            height: 80px;
+            background-color: coral;
+            position: relative;
+            border: 10px red solid;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son1">
+
+    </div>
+</div>
+
+<script src="js/jquery-1.12.2.js"></script>
+<script>
+    var fath = $(".father")[0];
+    /* alert(fath)
+     alert(fath[0])*/
+    console.log(fath.offsetHeight)
+    console.log(fath.offsetLeft)
+    console.log(fath.offsetTop )
+    console.log(fath.offsetWidth )
+
+    var son1= $(".son1")[0];
+   /* var offsetParent = son1.offsetParent();
+    offsetParent.css("background-color","green");*/
+    alert( son1.clientTop) ;//border的属性值
+    alert(son1.clientWidth)            ;
+    alert( son1.clientLeft)       ;
+
+    /* /!* alert(box.offsetTop)*!/
+      window.console.log(box.offsetHeight);
+      window.console.log(box.offsetWidth)*/
+</script>
+</body>
+</html>

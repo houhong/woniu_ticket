@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动滚动</title>
+    <style>
+        .father {
+            width: 100px;
+            height: 70px;
+            border: 1px red solid;
+            overflow-y: auto;
+        }
+
+        .child_1, .child_2 {
+            height: 71px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="father">
+
+    <div class="child_1">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+
+    </div>
+    <div class="child_2"></div>
+
+
+</div>
+<script src="js/jquery-1.12.2.js"></script>
+<script>
+
+    $(document).ready(function () {
+
+
+        var father = $(".father")[0];
+        var child01 = document.getElementsByClassName("child_1");
+        var child02 = document.getElementsByClassName("child_2");
+        child01.innerHTML = child02.innerHTML;
+
+        setInterval(function () {
+
+            if (father.scrollTop >= child01.scrollHeight) {
+
+                father.scrollTop = 0;
+            } else {
+                father.scrollTop += 20;
+            }
+        }, 1000)
+    })
+
+
+</script>
+</body>
+</html>

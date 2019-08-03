@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            border: 1px red solid;
+            cursor: move;
+        }
+        #hd{
+            position: absolute;
+            width: 200px;
+            height: 20px;
+            background-color: gray;
+
+           /* cursor: pointer;*/
+        }
+        .drop{
+          /*  width: 30px;*/
+            display: inline-block;
+            margin-left: 0;
+            float: left;
+
+        }
+        .close{
+           /* width: 30px;*/
+            display: inline-block;
+          /*  margin-right: 0;*/
+            float: right;
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+            <div id="hd">
+                <span class="drop">按住可拖拽</span><span class="close">关闭</span>
+            </div>
+            <div id="by" ></div>
+    </div>
+
+    <script src="js/jquery-1.12.2.js"></script>
+    <script>
+        var box = $(".container")[0];
+        //当鼠标点击的时候，计算鼠标在盒子中的坐标
+        var  x;
+        var  y;
+
+        //监听器
+        $("#hd").mouseover(function (e) {
+         x=  e.pageX -box.offsetLeft;
+         y = e.pageY - box.offsetTop;
+        })
+        //鼠标移动时，盒子的距离
+            function mov(e){
+            var boxX = e.pageX - x;
+            var boxY = e.pageY - y;
+
+            box.style.left = boxX +"px";
+            box.style.top = boxY+"px";
+        }
+
+        //移除鼠标
+        document.onmouseup = function (e) {
+
+            document.onmousemove=null;
+        }
+        document.onmousemove=function (e) {
+            mov(e);
+        }
+
+
+    </script>
+</body>
+</html>

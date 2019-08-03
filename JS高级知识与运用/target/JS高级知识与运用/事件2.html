@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>冒泡事件</title>
+</head>
+<body>
+<input type="button" value="点击">
+
+<script src="jquery-1.12.2.js"></script>
+<script>
+
+    var targe = $("input[type='button']")[0];
+
+
+    targe.onclick = fn;
+    targe.onmousemove = fn;
+    targe.onmouseout = fn;
+
+    function fn(e) {
+
+        switch (e.type) {
+            case 'click':
+                console.log("执行的是click函数");
+                break;
+            case 'mousemove':
+                console.log("执行的是mousemove函数");
+                break;
+            case 'mouseout':
+                console.log("执行的是mouseout函数");
+                break;
+
+        }
+
+    }
+
+</script>
+</body>
+</html>

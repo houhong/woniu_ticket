@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scroll属性</title>
+
+    <style>
+        .father {
+
+            width: 100px;
+            height: 100px;
+            /*  background-color: !*pink*!;*/
+            border: 1px red solid;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    sdfghjkl;dsasdfghsdfghj
+    jkljhgfdsasdfghasdfrtyu
+    sdfghjkl;dsasdfghsdfghj
+    jkljhgfdsasdfghasdfrtyu
+    jkljhgfdsasdfghasdfrtyusdfghjkl;dsasdfghsdfghj
+    jkljhgfdsasdfghasdfrtyusdfghjkl;dsasdfghsdfghj
+    jkljhgfdsasdfghasdfrtyusdfghjkl;dsasdfghsdfghj
+    jkljhgfdsasdfghasdfrtyusdfghjkl;dsasdfghsdfghj
+    jkljhgfdsasdfghasdfrtyusdfghjkl;dsasdfghsdfghj
+    jkljhgfdsasdfghasdfrtyu
+    sdfghjkl;dsasdfghsdfghj
+
+</div>
+<script src="js/jquery-1.12.2.js">
+</script>
+<script>
+
+    var fath = $(".father")[0];
+    //滚动出去的高度：scrllTop表示
+    console.log(fath.scrollTop);
+    console.log(fath.scrollLeft);
+    //内容高度
+    console.log(fath.scrollHeight)
+    console.log(fath.scrollWidth);
+
+    $(".father").scroll(function () {
+      console.log(fath.scrollHeight);
+    })
+
+</script>
+
+</body>
+</html>

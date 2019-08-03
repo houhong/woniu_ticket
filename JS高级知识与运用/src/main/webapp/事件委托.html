@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件委托</title>
+</head>
+<body>
+<ul id="ul">
+    <li>西施</li>
+    <li>貂蝉</li>
+    <li>邵君</li>
+    <li>凤姐</li>
+
+</ul>
+
+<!--事件委托  -冒泡 -->
+ <script src="jquery-1.12.2.js"></script>
+<script>
+    var ul = document.getElementById("ul");
+    ul.onclick = function (ev) {
+
+        console.log( ev.eventPhase)
+
+        ev = ev || window.event;
+        var currentTarget = ev.currentTarget;
+        console.log(currentTarget)
+    /*    var children = ul.children;
+     /!*   console.log(ev.eventPhase)*!/
+        for (var i = 0; i <children.length ; i++) {
+            //原生js
+            children[i].style.backgroundColor=null;
+        }
+        console.log(ev.target)
+        ev.target.style.backgroundColor = "red";
+        console.log(ev.eventPhase)*/
+
+    }
+</script>
+</body>
+</html>

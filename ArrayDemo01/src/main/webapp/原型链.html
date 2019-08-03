@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型链</title>
+</head>
+<body>
+
+
+    <script src="js/jquery-1.12.2.js"></script>
+    <script>
+        /*构造函数*/
+        function Student(sname,sage,ssex) {
+
+            this.sname =sname;
+            this.sage  =sage;
+            this.ssex  =ssex;
+
+            this.sayHi = function(){
+
+                console.log('test');
+            }
+        }
+        Student.prototype.sayHi = function () {
+            console.log("大家好，我是:"+this.sname);
+        }
+        var houhong =   new Student("houhong",18,'男');
+        var houli =   new Student("houli",18,'男');
+        /*houhong.sayHi();
+        houli.sayHi();*/
+        console.log(houhong._proto_ === Student.prototype)
+        window.console.dir(houli)
+
+
+
+
+
+    </script>
+</body>
+</html>

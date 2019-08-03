@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>BOM</title>
+    <style>
+        .container{
+
+            width: 200px;
+            height: 40px;
+            border: 1px red solid;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+        <form>
+            <input type="text">
+            <input type="button" value="删除">
+            <input type="button" value="刷新">
+        </form>
+
+        <input type="button" value="跳转">
+</div>
+<script src="js/jquery-1.12.2.js"></script>
+<script>
+    function tiaozuan() {
+        $("input[type=button]").click(function () {
+           /* window.location.href="http://www.baidu.com";*/
+            window.location.replace("http://www.baidu.com");
+          /*  window.location.reload(true);*/
+
+        })
+    }
+    function refresh() {
+        $("input[value='刷新']").click(function () {
+            window.location.reload(true);
+        })
+    }
+    refresh()
+   /* tiaozuan();*/
+    function delet() {
+       /* alert(document.querySelector("input[type='text']"));*/
+        var btn1 = document.querySelector("input[type='button']");
+        btn1.onclick = function () {
+
+            $(document.querySelector("input[type='text']")).val();
+           var isDelet = window.confirm("是否要删除信息？")
+            if(isDelet){
+                $(document.querySelector("input[type='text']")).val("");
+            }else{
+                $(document.querySelector("input[type='text']")).val();
+            }
+
+
+
+        }
+
+
+    }
+    delet();
+    /*var age = 18;*/
+    /* alert(window.age);*/
+    /* console.dir(window);
+     var s = window.prompt(123456);
+     window.alert(s);*/
+
+  /*  var isSure = window.confirm('是否要删除');
+    window.alert(isSure)*/
+</script>
+</body>
+</html>

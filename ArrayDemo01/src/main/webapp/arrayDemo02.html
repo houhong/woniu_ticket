@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+
+    <script src="js/jquery-1.12.2.js"></script>
+</head>
+<body>
+
+
+<script>
+
+    $(document).ready(function () {
+        
+    })
+        
+    $(document).ready(function () {
+        var arr = [1,2,3,4,5,67,8,9,6,7,8,9,6,8,0];
+        for (var i = 0; i < arr.length; i++) {
+
+            for (var j = i+1; j <arr.length ; j++) {
+                    if (arr[i]==arr[j]){
+                       arr.splice(j,1);
+
+                    }
+
+            }
+           /* console.log(arr)*/
+
+           /* arr.splice(arr.indexOf(2),1);*/
+        }
+        console.log(arr)
+
+        var str="123456789";
+         alert(str.substring(0,3))
+         alert(str.substr(1,3)) ;
+
+
+     /*   console.log( arr)*/
+
+       /* for (var i = 0; i < arr.length; i++) {
+            var original = arr[i];
+
+            for (var j =i+1; j < arr.length; j++) {
+
+                if (original == arr[j]) {
+
+                  console.log(arr.splice(arr.indexOf(arr[j]),1))   ;
+                }
+            }
+
+        }
+        /!*console.log(arr);*!/
+
+      /!*  arr = cleadRep(arr);*!/
+
+        /!*
+         var arr = [1,2,3];
+         console.log(arr);
+         var numbers = arr.splice(arr.indexOf(3),1);
+         console.log(arr)
+         console.log(numbers);*/
+
+    })
+
+
+    /*数组去重*/
+
+
+    /*  $(document).ready(function () {
+
+          var array=["a","b","c"];
+          console.log(array)
+          array.reverse();
+          console.log(array);
+          console.log(array.sort())
+          array = array.concat(12);//拼接后，重新赋值
+          console.log(array);
+          array= array.splice(0,2);
+          console.log(array)
+          ;
+          array = array.concat("1","2");
+          //用的迭代
+            arr=  array.filter(isBigEnough);
+          console.log(arr);
+        /!* array = array.splice(0,array.length);*!/
+          console.log(array);
+          console.log(array.indexOf("b"))
+          console.log(array.lastIndexOf("a"));
+
+
+          function isBigEnough(value){
+
+              return value>1;
+          }
+
+          console.log(  array.join("|"));
+      })*/
+
+    //数组的操作方法：
+
+
+</script>
+
+</body>
+</html>
