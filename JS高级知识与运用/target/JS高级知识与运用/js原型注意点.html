@@ -12,11 +12,15 @@
 
 
     function Student(name, age) {
+
         this.name = name;
         this.age = age;
     }
 
+     var stu= new Student("ho",123);
+   /* stu.sayHi();*/
     Student.prototype={
+        constructor:Student,
         sayHi:function () {
             console.log("hi ---------------")
         },

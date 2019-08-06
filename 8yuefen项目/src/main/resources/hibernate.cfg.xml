@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- 前四步其实就是数据库连接四要素，和JDBC连接数据库相似（可以说就是照着那个直接过来的） -->
+
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+
+        <property name="hibernate.connection.url">jdbc:mysql:///electricpowersys</property>
+
+        <property name="hibernate.connection.username">root</property>
+
+        <property name="hibernate.connection.password">1234</property>
+
+        <!-- 后面的四步才是hibernate的 -->
+
+        <property name="show_sql">true</property>
+
+        <property name="formal_sql">true</property>
+
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+        <!-- 这地方要把Student类的映射文件加载进来这个主配置文件里面，只有这样，Student类的映射文件才会生效！ -->
+
+        <mapping class="com.houhong.entry.ElecText"/>
+
+    </session-factory>
+
+</hibernate-configuration>
